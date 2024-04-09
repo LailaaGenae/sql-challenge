@@ -10,7 +10,7 @@ Inspect the CSV files, and then sketch an Entity Relationship Diagram of the tab
 ## Data Engineering
 Create a table schema for each of the six CSV files. Specify the data types, primary keys, foreign keys, and other constraints.
 
-'''pgsql
+```sql
 -- create titles table
 CREATE TABLE titles(
 	title_id VARCHAR(7) PRIMARY KEY,
@@ -51,7 +51,7 @@ CREATE TABLE salaries(
 	emp_no INT references employees(emp_no),
 	salary INT
 );
-'''
+```
 
 ## Data Analysis
 1. List the employee number, last name, first name, sex, and salary of each employee.
