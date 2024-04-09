@@ -1,24 +1,24 @@
 --create titles table
 CREATE TABLE titles(
 	title_id VARCHAR(7) PRIMARY KEY,
-	title VARCHAR (33)
+	title VARCHAR (33) NOT NULL
 );
 
 -- create departments table
 CREATE TABLE departments(
 	dept_no VARCHAR(55) PRIMARY KEY,
-	dept_name VARCHAR(55)
+	dept_name VARCHAR(55) NOT NULL
 );
 
 -- create employees table
 CREATE TABLE employees(
 	emp_no int PRIMARY KEY ,
 	emp_title_id VARCHAR(7) references titles(title_id),
-	birth_date DATE,
-	first_name VARCHAR(55),
-	last_name VARCHAR(55),
-	sex VARCHAR (1),
-	hire_date DATE
+	birth_date DATE NOT NULL,
+	first_name VARCHAR(55) NOT NULL,
+	last_name VARCHAR(55) NOT NULL,
+	sex VARCHAR (1) NOT NULL,
+	hire_date DATE NOT NULL
 );
 
 -- create department employee table 
@@ -37,5 +37,5 @@ CREATE TABLE dept_manager(
 -- create salaries table
 CREATE TABLE salaries(
 	emp_no INT references employees(emp_no),
-	salary INT
+	salary INT NOT NULL
 );
